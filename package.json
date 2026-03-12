@@ -1,0 +1,22 @@
+{
+  "name": "hr-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HR System monorepo — React frontend + Laravel backend",
+  "scripts": {
+    "frontend": "cd frontend && npm run dev",
+    "backend": "cd backend && php artisan serve",
+    "dev": "concurrently --names 'FRONTEND,BACKEND' --prefix-colors 'cyan,magenta' \"npm run frontend\" \"npm run backend\"",
+    "install:frontend": "cd frontend && npm install",
+    "install:backend": "cd backend && composer install",
+    "install:all": "npm run install:frontend && npm run install:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "migrate": "cd backend && php artisan migrate",
+    "migrate:fresh": "cd backend && php artisan migrate:fresh --seed",
+    "test:frontend": "cd frontend && npm run test",
+    "test:backend": "cd backend && php artisan test"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
